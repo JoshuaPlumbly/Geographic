@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed994cabe3cc4244499935115a3fd446, type: 3}
   m_Name: EarthLikeShape
   m_EditorClassIdentifier: 
-  radius: 5.45
+  radius: 4.74
+  noiseSettings:
+    strength: 1.98
+    numLayers: 1
+    baseRoughness: 1.61
+    roughness: 1.57
+    persistence: 0.76
+    center: {x: 0, y: 0, z: 0}
+  freqancy: 2.52

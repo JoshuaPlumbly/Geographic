@@ -9,7 +9,7 @@
             this.radius = radius;
         }
 
-        public Vector3 CalculatePoint(Vector3 pointOnUnitSphere)
+        public Vector3 CalculatePointOnUnitSphere(Vector3 pointOnUnitSphere)
         {
             return pointOnUnitSphere * radius;
         }

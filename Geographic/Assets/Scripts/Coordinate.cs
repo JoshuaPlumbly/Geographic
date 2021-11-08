@@ -18,6 +18,13 @@ public struct Coordinate
             GetLongitudeFor(pointOnUnitSphere));
     }
 
+    public static Vector2 CoordinateAsVector2(Vector3 pointOnUnitSphere)
+    {
+        return new Vector2(
+            GetLatitudeFor(pointOnUnitSphere),
+            GetLongitudeFor(pointOnUnitSphere));
+    }
+
     public static float GetLatitudeFor(Vector3 pointOnUnitSphere)
     {
         return Mathf.Asin(pointOnUnitSphere.y);
