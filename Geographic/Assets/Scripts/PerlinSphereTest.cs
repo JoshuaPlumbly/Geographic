@@ -39,7 +39,7 @@ public class PerlinSphereTest : MonoBehaviour
         {
             foreach (Vector3 p in _points)
             {
-                float sample = NoisePerlin.GetValue3D(p, _frequency);
+                float sample = PerlinNoise.GetValue3D(p, _frequency);
                 sample = (sample + 1f) / 2f;
                 Gizmos.color = new Color(sample, sample, sample, 1);
                 Gizmos.DrawSphere(p, 0.3f);

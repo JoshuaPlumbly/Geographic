@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class NoisePerlin
+public class PerlinNoise
 {
 	private float _frequency = 1;
 
@@ -41,7 +41,7 @@ public class NoisePerlin
 
 	private const int hashCount = 255;
 
-	public NoisePerlin(float frequency)
+	public PerlinNoise(float frequency)
     {
 		this._frequency = frequency;
     }

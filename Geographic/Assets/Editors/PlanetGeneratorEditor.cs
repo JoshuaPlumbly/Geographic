@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetGeneratorEditor : Editor
 {
     PlanetGenerator _planetGenerator;
-    Editor shpaeEditor;
+    Editor sphaeEditor;
     Editor colourEditor;
 
     public override void OnInspectorGUI()
@@ -23,7 +23,7 @@ public class PlanetGeneratorEditor : Editor
             (target as PlanetGenerator).GeneratePlanet();
         }
 
-        DrawSettingsEditor(_planetGenerator._shapeSettings, _planetGenerator.GenerateMeshFromTerrainFaces, ref _planetGenerator._shapeSettingFoldout, ref shpaeEditor);
+        DrawSettingsEditor(_planetGenerator._shapeSettings, _planetGenerator.GeneratePlanet, ref _planetGenerator._shapeSettingFoldout, ref sphaeEditor);
         DrawSettingsEditor(_planetGenerator._colourSettings, _planetGenerator.GenerateMeshColour, ref _planetGenerator._colourSettingFoldout, ref colourEditor);
     }
 

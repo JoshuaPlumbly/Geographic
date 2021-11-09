@@ -12,13 +12,10 @@ public class PlanetGenerator : MonoBehaviour
     [HideInInspector] public bool _shapeSettingFoldout;
     [HideInInspector] public bool _colourSettingFoldout;
 
+    ShapeGenerator _shapeGenerator;
+
     [SerializeField, HideInInspector] MeshFilter[] _meshFilters;
     TerrainFace[] _terrainFaces;
-
-    private void OnValidate()
-    {
-        GeneratePlanet();
-    }
 
     public void GeneratePlanet()
     {
@@ -29,6 +26,8 @@ public class PlanetGenerator : MonoBehaviour
 
     private void InitializeTerrainFaces()
     {
+        _shapeGenerator = new ShapeGenerator(_shapeSettings);
+
         if (_meshFilters == null || _meshFilters.Length == 0)
             _meshFilters = new MeshFilter[6];
 
@@ -56,7 +55,7 @@ public class PlanetGenerator : MonoBehaviour
                 _meshFilters[i].sharedMesh = new Mesh();
             }
 
-            _terrainFaces[i] = new TerrainFace(_shapeSettings, _meshFilters[i].sharedMesh, _resolution, directions[i]);
+            _terrainFaces[i] = new TerrainFace(_shapeGenerator, _meshFilters[i].sharedMesh, _resolution, directions[i]);
         }
     }
 

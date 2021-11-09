@@ -9,7 +9,7 @@ public class TextureCreator : MonoBehaviour
     [SerializeField] private float _freqancey = 1f;
 
     private Texture2D _texture2D;
-    private NoisePerlin _noise;
+    private PerlinNoise _noise;
 
     public void OnEnable()
     {
@@ -23,7 +23,7 @@ public class TextureCreator : MonoBehaviour
         _texture2D.wrapMode = TextureWrapMode.Clamp;
         _texture2D.filterMode = FilterMode.Trilinear;
         _texture2D.anisoLevel = 9;
-        _noise = new NoisePerlin(_freqancey);
+        _noise = new PerlinNoise(_freqancey);
         GetComponent<MeshRenderer>().material.mainTexture = _texture2D;
 
         FillTexture();
@@ -35,7 +35,7 @@ public class TextureCreator : MonoBehaviour
             _texture2D.Resize(_resolution, _resolution);
 
         if (_noise == null)
-            _noise = new NoisePerlin(_freqancey);
+            _noise = new PerlinNoise(_freqancey);
 
         Vector3 point00 = new Vector3(-0.5f, -.05f);
         Vector3 point01 = new Vector3(-0.5f, 0.5f);
@@ -52,7 +52,7 @@ public class TextureCreator : MonoBehaviour
             for (int x = 0; x < _resolution; x++)
             {
                 Vector3 point = Vector3.Lerp(point0, point1, (x + 0.5f) * stepSize);
-                _texture2D.SetPixel(x, y, Color.white * (NoisePerlin.GetValue3D(new Vector3(x,y,0f),_freqancey)));
+                _texture2D.SetPixel(x, y, Color.white * (PerlinNoise.GetValue3D(new Vector3(x,y,0f),_freqancey)));
             }
         }
 

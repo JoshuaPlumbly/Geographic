@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43547a7c2efd7ea4587e0aa9ea5fe9f3, type: 3}
   m_Name: EarthLikeColour
   m_EditorClassIdentifier: 
-  colour: {r: 0.40530434, g: 0.65471685, b: 0.8679245, a: 1}
+  colour: {r: 0.028390896, g: 0.20754719, b: 0.116864964, a: 1}
