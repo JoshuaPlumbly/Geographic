@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed994cabe3cc4244499935115a3fd446, type: 3}
   m_Name: EarthLikeShape
   m_EditorClassIdentifier: 
-  radius: 6.76
+  radius: 7.69
   noiseLayers:
-  - enabled: 0
+  - enabled: 1
     useFirstLayerAsMask: 0
     noiseSettings:
-      strenth: 0.21
-      minValue: 1.5
-      numberOfLayers: 3
-      baseRoughness: 0.96
-      roughness: 5.08
-      persistence: 0.64
-      offset: {x: -0.49, y: 0, z: 0}
+      strenth: 0.06
+      minValue: 1.27
+      numberOfLayers: 2
+      baseRoughness: 2.75
+      roughness: 0.68
+      persistence: 0.73
+      offset: {x: 0, y: 0, z: 0}
   - enabled: 1
     useFirstLayerAsMask: 1
     noiseSettings:
-      strenth: 0.62
-      minValue: 0.05
+      strenth: 1.29
+      minValue: 0.49
       numberOfLayers: 3
-      baseRoughness: 5.2
-      roughness: 20.66
-      persistence: 2.4
-      offset: {x: -0.14, y: 0, z: 0}
+      baseRoughness: 13.1
+      roughness: 20.53
+      persistence: 1.53
+      offset: {x: -2.6, y: 0, z: 0}

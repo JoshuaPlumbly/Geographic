@@ -76,5 +76,10 @@ public class PlanetGenerator : MonoBehaviour
     public void GenerateMeshColour()
     {
         _colourGenerator.UpdateColour();
+
+        foreach (var face in _terrainFaces)
+        {
+            face.UpdateUVs(_colourGenerator);
+        }
     }
 }
