@@ -12,4 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43547a7c2efd7ea4587e0aa9ea5fe9f3, type: 3}
   m_Name: EarthLikeColour
   m_EditorClassIdentifier: 
-  colour: {r: 0.028390896, g: 0.20754719, b: 0.116864964, a: 1}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.038714837, g: 0.24402362, b: 0.5471698, a: 1}
+    key1: {r: 0.15254532, g: 0.69772995, b: 0.21784693, a: 1}
+    key2: {r: 0.18814482, g: 0.8396226, b: 0.11485406, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 4819
+    ctime1: 6554
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  material: {fileID: 2100000, guid: 9ae64b71c1c69ca4e9fa012c0dc813e3, type: 2}

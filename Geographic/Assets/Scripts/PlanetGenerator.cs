@@ -12,7 +12,8 @@ public class PlanetGenerator : MonoBehaviour
     [HideInInspector] public bool _shapeSettingFoldout;
     [HideInInspector] public bool _colourSettingFoldout;
 
-    ShapeGenerator _shapeGenerator;
+    private ShapeGenerator _shapeGenerator = new ShapeGenerator();
+    private ColourGenerator _colourGenerator = new ColourGenerator();
 
     [SerializeField, HideInInspector] MeshFilter[] _meshFilters;
     TerrainFace[] _terrainFaces;
@@ -26,7 +27,8 @@ public class PlanetGenerator : MonoBehaviour
 
     private void InitializeTerrainFaces()
     {
-        _shapeGenerator = new ShapeGenerator(_shapeSettings);
+        _shapeGenerator.UpdateSettings(_shapeSettings);
+        _colourGenerator.UpdateSettings(_colourSettings);
 
         if (_meshFilters == null || _meshFilters.Length == 0)
             _meshFilters = new MeshFilter[6];
@@ -50,10 +52,12 @@ public class PlanetGenerator : MonoBehaviour
                 GameObject meshObject = new GameObject("mesh");
                 meshObject.transform.parent = transform;
 
-                meshObject.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
+                meshObject.AddComponent<MeshRenderer>();
                 _meshFilters[i] = meshObject.AddComponent<MeshFilter>();
                 _meshFilters[i].sharedMesh = new Mesh();
             }
+
+            _meshFilters[i].GetComponent<MeshRenderer>().sharedMaterial = _colourSettings.material;
 
             _terrainFaces[i] = new TerrainFace(_shapeGenerator, _meshFilters[i].sharedMesh, _resolution, directions[i]);
         }
@@ -65,13 +69,12 @@ public class PlanetGenerator : MonoBehaviour
         {
             face.ConstructMesh();
         }
+
+        _colourGenerator.UpdateElevation(_shapeGenerator.ElevationMinMax);
     }
 
     public void GenerateMeshColour()
     {
-        foreach (var meshFilter in _meshFilters)
-        {
-            meshFilter.GetComponent<MeshRenderer>().sharedMaterial.color = _colourSettings.colour;
-        }
+        _colourGenerator.UpdateColour();
     }
 }
