@@ -14,7 +14,7 @@ public class ColourGenerator
 
         if (_texture == null || _texture.height != _settings.worldSettings.biomes.Length)
         {
-            _texture = new Texture2D(_textureResolution, _settings.worldSettings.biomes.Length);
+            _texture = new Texture2D(_textureResolution, _settings.worldSettings.biomes.Length, TextureFormat.RGBA32, false);
         }
     }
 

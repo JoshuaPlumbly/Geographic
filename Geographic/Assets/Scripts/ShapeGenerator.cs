@@ -3,18 +3,18 @@
 public class ShapeGenerator
 {
 	ShapeSettings _settings;
-	NoiseFilter[] _noiseFilter;
+	INosieFillter[] _noiseFilter;
 
 	public MinMaxF ElevationMinMax { get; private set; }
 
 	public void UpdateSettings(ShapeSettings settings)
 	{
 		_settings = settings;
-		_noiseFilter = new NoiseFilter[settings.noiseLayers.Length];
+		_noiseFilter = new INosieFillter[settings.noiseLayers.Length];
 
 		for (int i = 0; i < _noiseFilter.Length; i++)
 		{
-			_noiseFilter[i] = new NoiseFilter(settings.noiseLayers[i].noiseSettings);
+			_noiseFilter[i] = NoiseFilterFactory.CreateNoiseFilter(_settings.noiseLayers[i].noiseSettings);
 		}
 
 		ElevationMinMax = new MinMaxF();
