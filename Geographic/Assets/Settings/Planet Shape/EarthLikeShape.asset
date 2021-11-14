@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed994cabe3cc4244499935115a3fd446, type: 3}
   m_Name: EarthLikeShape
   m_EditorClassIdentifier: 
-  radius: 10
+  radius: 120
   noiseLayers:
   - enabled: 1
     useFirstLayerAsMask: 0
