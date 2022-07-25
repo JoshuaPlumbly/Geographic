@@ -122,4 +122,4 @@ MonoBehaviour:
       offset: {x: 0.37, y: 0, z: 0}
     noiseOffset: 1.91
     noiseSrength: 0.06
-    blendAmount: 0.055
+    blendAmount: 0.048
